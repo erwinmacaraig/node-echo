@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {    
@@ -43,8 +45,8 @@ app.post('/message', (req, res) => {
     }
     res.end();
 });
-app.listen(3000, () => {
-    console.log('WEB SERVER RUNNING ON PORT 3000');
+app.listen(PORT, () => {
+    console.log(`WEB SERVER RUNNING ON PORT ${PORT}`);
 });
 
 
